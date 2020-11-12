@@ -5,16 +5,15 @@
 
 int main(int argc, char *argv[]) {
 
-	int i = 10;
-	int *ptr = &i;
+	int i = 100;
+	int *p = &i;
+	int **q = &p;
 	
-	printf("%i = %d, pi : %p\n", i, ptr);
+	*p = 200;  
+	printf("i = %d, *p = %d, **q = %d\n", i, *p, **q);
 	
-	(*ptr)++;	// 포인터가 가리키는 값 증가 
-	printf("%i = %d, pi : %p\n", i, ptr);
-	
-	*ptr++;		// 포인터 자체가 증가, 4byte만큼 위치이동 
-	printf("%i = %d, pi : %p\n", i, ptr);
+	**q = 300; 
+	printf("i = %d, *p = %d, **q = %d\n", i, *p, **q);
 	
 	return 0;
 }
